@@ -5,6 +5,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
@@ -36,9 +37,9 @@
             y mejora de la misma. 
             </p>
             <p>
-              El frontend me daba bastante miedo porque el diseño creí que no era para mí
-            un grado superior y unos años después te quiero enseñar mis avances.
+              El frontend me daba bastante miedo porque el diseño creí que no era para mí.
             </p>
+            <p>Un grado superior y unos años después te quiero enseñar mis avances.</p>
           <p>
             Ahora bien, la parte del backend del no entender por qué pasa lo que pasa en un crud, un login, una conexión de la 
             base de datos también creí que no era para mí. 
@@ -114,7 +115,7 @@ export default {
 <style scoped>
 /* delay iconos */
 .animate-on-scroll {
-  animation: shakeX 1.5s ease-in-out; /* Example animation */
+  animation: shakeX 1.5s ease-in-out;
 }
 
 @keyframes bounce {
@@ -126,17 +127,20 @@ export default {
   }
 }
 
-
-
 /* Contenedor Principal */
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  
   height: 100vh;
-  padding: 0 40px;
+  width: 100vw;
+  
+  padding: 0 0px;
+  margin: 0;
   background-image: linear-gradient(-15deg, #0f2c30 0%, #7b8c94 50%, #f4f8fa 100%);
-  position: relative; /* Mantiene flexibilidad en diseño */
+  position: relative;
   
 }
 
@@ -146,16 +150,17 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 80px; /* Espacio entre las flechas */
-  width: 40%; /* Adjust width as needed */
-  margin: -50px; 
+  gap: 50px;
+  width: 35rem;
+ /*  margin: -90px; */
+  height: 45.6rem;
 }
 
 .skill-item {
   display: flex;
   align-items: center;
-  gap: 100px; /* Espacio entre la flecha y el texto */
-  margin:  auto; /* Centers horizontally */
+  gap: 100px;
+  margin: auto;
 }
 
 .skill-arrow {
@@ -169,33 +174,20 @@ export default {
   color: #280d9e;
 }
 
-
-/* Animación de Rebote */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
 /* Parte Derecha: Cuadro LED */
 .about-container {
   display: flex;
-  justify-content: flex-end;
+  
   align-items: center;
-  width: 100%;
-  margin: 400px;
-  
-  
+  width: 55%;
+  margin: 0; /* Eliminamos el margin de 400px */
 }
 
 .dynamic-border {
   position: relative;
   width: 100%;
   max-width: 985px;
-  height:  auto;
+  height: auto;
   padding: 40px;
   border-radius: 15px;
   box-sizing: border-box;
@@ -209,154 +201,87 @@ export default {
   width: 100%;
   height: 100%;
   border-radius: 45px;
-
-  /* Sombra más suave y expandida */
-  box-shadow: 0 0 100px rgba(19, 32, 105, 0.2); 
-
-  /* Colores más suaves (puedes ajustar los hex para que se noten menos) */
-  background: linear-gradient(90deg, #bfcfcf, #0c243b, #0d0ab4); 
+  box-shadow: 0 0 100px rgba(19, 32, 105, 0.2);
+  background: linear-gradient(90deg, #bfcfcf, #0c243b, #0d0ab4);
   background-size: 200% 100%;
   animation: move-border 3s linear infinite;
-  z-index: 1;
-  opacity: 0.3; /* añade opacidad general para suavizarlo aún más */
+  z-index: -1;
 }
 
+/* Contenido dentro del LED */
 .about-content {
   position: relative;
-  z-index: 2;
-  background-color: linear-gradient(90deg, #9caaaa, #405d7c, #051618);
-  padding: 40px;
-  /* color: rgb(50, 8, 109); */
-  color: #f1f1f1; /* gris muy claro que resalta en fondos oscuros y medios */
+  z-index: 1;
+  color: white;
+  font-size: 1.2rem;
   font-family: 'Poppins', sans-serif;
-  
-  border-radius: 10px;
 }
 
-/* Animación del LED */
-@keyframes move-border {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Media Queries para Responsividad */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   .container {
-    flex-wrap: wrap;
+    flex-direction: column;
     height: auto;
     padding: 20px;
   }
 
   .skills-container {
-    flex: 1;
+    width: 100%;
     align-items: center;
+    margin: 0;
     gap: 40px;
   }
 
   .skill-item {
-    gap: 50px;
+    gap: 40px;
   }
 
-  .skill-arrow {
-    width: 60px;
-    height: 50px;
+  .about-container {
+    margin: 40px 0;
+    justify-content: center;
+  }
+
+  .dynamic-border {
+    padding: 20px;
+  }
+
+  .about-content {
+    font-size: 1rem;
   }
 
   .skill-text {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+}
+/* RESPONSIVE: solo apilamos en móviles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .center-arrow {
-    position: relative;
-    left: 50%;
-    top: auto;
-    transform: translate(-50%, 0);
-    margin: 20px 0;
-  }
-
-  .center-arrow img {
-    width: 100px;
-    height: 100px;
+  .skills-container {
+    width: 100%;
+    align-items: center;
+    gap: 30px;
   }
 
   .about-container {
     width: 100%;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
-  .dynamic-border {
-    width: 90%;
-    max-width: 450px;
-    padding: 20px;
+  .skill-item {
+    gap: 30px;
+  }
+
+  .skill-text {
+    font-size: 1.4rem;
   }
 
   .about-content {
-    padding: 20px;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .skills-container {
-    gap: 20px;
-  }
-
-  .skill-arrow {
-    width: 50px;
-    height: 40px;
-  }
-
-  .skill-text {
-    font-size: 1.2rem;
-  }
-
-  .center-arrow img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .dynamic-border {
-    width: 100%;
-    max-width: 350px;
-    padding: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .skills-container {
-    align-items: center;
-    gap: 10px;
-  }
-
-  .skill-arrow {
-    width: 40px;
-    height: 30px;
-  }
-
-  .skill-text {
     font-size: 1rem;
-  }
-
-  .center-arrow img {
-    width: 60px;
-    height: 60px;
-  }
-
-  .dynamic-border {
-    padding: 10px;
-  }
-
-  .about-content {
-    font-size: 0.8rem;
   }
 }
 </style>
-

@@ -179,10 +179,11 @@ export default {
   --spacing-l: 24px;
   --spacing-xl: 32px;
   --spacing-xxl: 64px;
-  --width-container: 1200px;
+  --width-container: 100vh;
 }
 
 *{
+  
   border: 0;
   margin: 0;
   padding: 0;
@@ -190,15 +191,17 @@ export default {
 }
 
 html{
-  height: 100%;
+  
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
+  width: 100vw;
+  height: 100vh;
   
 }
 
-body{
-  height: 100%;
-}
+
+
+
 
 .hero-section {
   align-items: center;  /* Centra verticalmente */
@@ -206,10 +209,11 @@ body{
   display: flex;
   flex-direction: column;  /* Centra los elementos en una sola columna */
   min-height: 100vh;  /* Usa un 70% de la altura total del viewport */
-  background-image: linear-gradient(15deg, #f4f8fa 0%, #7b8c94 50%, #0f2c30 100%, #0f2c30 100%, #7b8c94 50%, #f4f8fa 0% );
-
+  background-image: linear-gradient(15deg,#f4f8fa 0%, #7b8c94 50%, #0f2c30 100%);
+  width: 100vw;
   padding: var(--spacing-xxl) var(--spacing-l);
 }
+
 
 
 .card-grid{
@@ -218,7 +222,13 @@ body{
   grid-column-gap: var(--spacing-l);
   grid-row-gap: var(--spacing-l);
   max-width: var(--width-container);
-  width: 100%;
+  width: 100vw;
+} 
+
+@media (max-width: 600px) {
+  .card {
+    height: 180px;
+  }
 }
 
 @media(min-width: 540px){
@@ -233,9 +243,21 @@ body{
   }
 }
 
-.card{
+ .card{
   list-style: none;
   position: relative;
+} 
+
+.card {
+  position: relative;
+  height: 200px;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card:before{
@@ -270,12 +292,14 @@ body{
   top: 0;
   transform-origin: center;
   transform: scale(1) translateZ(0);
-   opacity: 0;  /* Inicialmente oculto */
-   animation: fadeIn 1s ease-out forwards;
-  animation-delay: 2s;  /* Aparece después de 2 segundos */
+  opacity: 0;  
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 2s;  
   filter: 200ms linear,
   
-}
+} 
+
+
 
 .card:hover .card__background{
   transform: scale(1.05) translateZ(0);
