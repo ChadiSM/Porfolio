@@ -180,6 +180,7 @@ export default {
   --spacing-xl: 32px;
   --spacing-xxl: 64px;
   --width-container: 100vh;
+  
 }
 
 *{
@@ -188,6 +189,7 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 html{
@@ -211,6 +213,7 @@ html{
   min-height: 100vh;  /* Usa un 70% de la altura total del viewport */
   background-image: linear-gradient(15deg,#f4f8fa 0%, #7b8c94 50%, #0f2c30 100%);
   width: 100vw;
+  height: 100vh;
   padding: var(--spacing-xxl) var(--spacing-l);
 }
 
@@ -223,6 +226,7 @@ html{
   grid-row-gap: var(--spacing-l);
   max-width: var(--width-container);
   width: 100vw;
+  
 } 
 
 @media (max-width: 600px) {

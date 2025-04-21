@@ -26,9 +26,9 @@ import Botones from './components/botones.vue';
 html{
   
   height: 100vh;
-  background-image: linear-gradient(15deg,#f4f8fa 0%, #7b8c94 50%, #0f2c30 100%);
+  background-image: linear-gradient(15deg,#7b8c94 0%, #7b8c94 50%, #0f2c30 100%);
   box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.5); /* Sombra que simula el borde LED */
-  background: linear-gradient(90deg, #9caaaa, #405d7c, #051618);
+  z-index: 4;
   overflow-x: hidden;
 }
 

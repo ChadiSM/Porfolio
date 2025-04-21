@@ -152,7 +152,6 @@ export default {
   align-items: flex-start;
   gap: 50px;
   width: 35rem;
- /*  margin: -90px; */
   height: 45.6rem;
 }
 
