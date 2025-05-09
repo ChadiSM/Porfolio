@@ -37,6 +37,16 @@
           }"
         ></div>
         <div class="card__content">
+                     <!-- Icono GitHub -->
+  <div class="github-icon-container">
+    <a 
+      :href="project.githubLink" 
+      target="_blank" 
+      @click.stop
+    >
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
           
           <div class="tags">
             
@@ -84,25 +94,29 @@ export default {
           description: "Descripción breve del proyecto.",
           tags: ["Vue", "Firebase"],
           youtubeId: "https://youtu.be/faZRumIpTHI",
+          githubLink: "https://github.com/ChadiSM/AngularFrontend"
           
         },
         {
           title: "LaravelVue",
           description: "Descripción breve del proyecto.",
           tags: ["Vue", "Firebase"],
-          youtubeId: "https://www.youtube.com/watch?v=9be4WPRtAxk"
+          youtubeId: "https://www.youtube.com/watch?v=9be4WPRtAxk",
+          githubLink: "https://github.com/ChadiSM/Aula-Virtual-Interactiva"
         },
         {
           title: "Django",
           description: "Descripción breve del proyecto.",
           tags: ["Vue", "Firebase"],
-          youtubeId: "https://youtu.be/-73VSNBKe88"
+          youtubeId: "https://youtu.be/-73VSNBKe88",
+          githubLink: "https://github.com/ChadiSM/DjangoPeriodico"
         },
         {
           title: "DjangoReact",
           description: "Descripción breve del proyecto.",
           tags: ["Vue", "Firebase"],
-          youtubeId: "https://www.youtube.com/watch?v=PJMv7MArwKw"
+          youtubeId: "https://www.youtube.com/watch?v=PJMv7MArwKw",
+          githubLink: "https://github.com/ChadiSM/GamesBack"
         },
         // otros proyectos
       ]
@@ -585,5 +599,13 @@ ul li a:hover {
   cursor: pointer;
 }
 
+.github-icon-container{
+  top: 170px;
+  bottom: -40px;
+  left: 220px;
+  position: relative;
+  font-size: 30px;
+  
+}
 
 </style>

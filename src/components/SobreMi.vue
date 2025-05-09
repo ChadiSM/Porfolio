@@ -10,7 +10,7 @@
 </head>
 
   <div class="container">
-    <!-- Parte Izquierda: Habilidades con flechas -->
+    <!-- Parte Izquierda: Habilidades  -->
     <div class="skills-container">
   <div class="skill-item" v-for="(skill, index) in skills" :key="index">
   
@@ -24,7 +24,7 @@
 </div>
 
  
-    <!-- Parte Derecha: Cuadro LED con texto -->
+    <!-- Parte Derecha:-->
     <div class="about-container ">
       <div class="dynamic-border">
         <div class="about-content">
